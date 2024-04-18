@@ -5,6 +5,8 @@ import random, os
 class EntryList:
     def __init__(self):
         self.config = configparser.ConfigParser()
+        self.config.optionxform = str
+
         self.iniFilePath = None
         self.loadedCars = []
         self.localCarPath = None
@@ -178,7 +180,7 @@ class EntryList:
 
         # save config
         with open(self.iniFilePath, "w") as configfile:
-            self.config.write(configfile)
+            self.config.write(configfile, space_around_delimiters=False)
 
         
     def btn_callback_addNew(self, sender, data, user_data):
