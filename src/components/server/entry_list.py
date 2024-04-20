@@ -420,16 +420,16 @@ class EntryList:
     def save_ini(self, cars):
         self.config.clear()
         for i, car in enumerate(cars):
-            self.config.add_section(f"CAR_{str(i+1)}")
-            self.config[f"CAR_{i+1}"]["_ACTOOL_GUID"] = str(car["_ACTOOL_GUID"])
-            self.config[f"CAR_{i+1}"]["MODEL"] = str(car["MODEL"])
-            self.config[f"CAR_{i+1}"]["SKIN"] = str(car["SKIN"])
-            self.config[f"CAR_{i+1}"]["SPECTATOR_MODE"] = str(car["SPECTATOR_MODE"])
-            self.config[f"CAR_{i+1}"]["DRIVERNAME"] = str(car["DRIVERNAME"])
-            self.config[f"CAR_{i+1}"]["TEAM"] = str(car["TEAM"])
-            self.config[f"CAR_{i+1}"]["GUID"] = str(car["GUID"])
-            self.config[f"CAR_{i+1}"]["BALLAST"] = str(car["BALLAST"])
-            self.config[f"CAR_{i+1}"]["RESTRICTOR"] = str(car["RESTRICTOR"])
+            self.config.add_section(f"CAR_{str(i)}")
+            self.config[f"CAR_{i}"]["_ACTOOL_GUID"] = str(car["_ACTOOL_GUID"])
+            self.config[f"CAR_{i}"]["MODEL"] = str(car["MODEL"])
+            self.config[f"CAR_{i}"]["SKIN"] = str(car["SKIN"])
+            self.config[f"CAR_{i}"]["SPECTATOR_MODE"] = str(car["SPECTATOR_MODE"])
+            self.config[f"CAR_{i}"]["DRIVERNAME"] = str(car["DRIVERNAME"])
+            self.config[f"CAR_{i}"]["TEAM"] = str(car["TEAM"])
+            self.config[f"CAR_{i}"]["GUID"] = str(car["GUID"])
+            self.config[f"CAR_{i}"]["BALLAST"] = str(car["BALLAST"])
+            self.config[f"CAR_{i}"]["RESTRICTOR"] = str(car["RESTRICTOR"])
 
         # save config
         with open(self.selectedEntryIniPath, "w") as configfile:
