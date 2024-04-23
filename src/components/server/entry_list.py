@@ -352,11 +352,12 @@ class EntryList:
     def folderDialog_OkCallback(self, sender, app_data, user_data):
         self.selectedLocalCarPath = app_data["file_path_name"]
 
+        # TODO: check for data.acd, collider.kn5
         folders_with_matching_kn5 = [
             folder
             for folder in os.listdir(self.selectedLocalCarPath)
             if os.path.exists(
-                os.path.join(self.selectedLocalCarPath, folder, f"{folder}.kn5")
+                os.path.join(self.selectedLocalCarPath, folder, "skins")
             )
         ]
 
